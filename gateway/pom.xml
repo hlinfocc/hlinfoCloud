@@ -7,17 +7,16 @@
         <artifactId>hlinfoCloud</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>net.hlinfo.cloud</groupId>
     <artifactId>gateway</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>gateway</name>
     <description>Demo project for Spring Boot</description>
 
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <groupId>net.hlinfo</groupId>
+            <artifactId>hlinfocommon</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
