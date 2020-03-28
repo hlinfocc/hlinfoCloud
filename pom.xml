@@ -84,6 +84,7 @@
 
     <modules>
         <module>demo</module>
+        <module>gateway</module>
     </modules>
 
 </project>
