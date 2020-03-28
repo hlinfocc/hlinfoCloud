@@ -85,6 +85,8 @@
     <modules>
         <module>demo</module>
         <module>gateway</module>
+        <module>hlinfocommon</module>
+        <module>admin</module>
     </modules>
 
 </project>
