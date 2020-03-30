@@ -32,8 +32,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
-public class DynamicRoutingConfig{}
-/*
+//public class DynamicRoutingConfig{}
+
 @Component
 public class DynamicRoutingConfig implements ApplicationEventPublisherAware {
 
@@ -143,5 +143,3 @@ public class DynamicRoutingConfig implements ApplicationEventPublisherAware {
     }
 
 }
-
-*/

@@ -10,13 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class IndexController {
 
-	@Value("${spring.application.name}")
-	private String name;
-
 	@GetMapping(value = {"/","/index.html"})
 	public String index() {
 		
-		return "Hello Word ^_^"+name;
+		return "Hello Word admin^_^";
 	}
 	@GetMapping("/ok")
 	public String getAreacode() {
