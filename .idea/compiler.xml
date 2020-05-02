@@ -8,9 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="admin" />
         <module name="demo" />
+        <module name="docs" />
         <module name="gateway" />
         <module name="hlinfocommon" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="docs" options="" />
+    </option>
   </component>
 </project>

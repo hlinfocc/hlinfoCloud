@@ -1,4 +1,4 @@
-package net.hlinfo.cloud.demo;
+package net.hlinfo.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
