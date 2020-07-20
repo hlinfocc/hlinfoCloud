@@ -4,14 +4,15 @@ import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import net.hlinfo.cloud.demo.mybatis.service.CoreService;
 import net.hlinfo.cloud.entity.Userinfo;
+import net.hlinfo.cloud.mybatis.service.MybatisService;
 import net.hlinfo.opt.Funs;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.dao.pager.Pager;
 import org.nutz.lang.util.NutMap;
-import org.nutz.lang.util.PageInfo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,9 +29,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/")
 public class IndexController {
+	protected Logger log = LoggerFactory.getLogger(IndexController.class);
 
 	@Autowired
-	private CoreService coreService;
+	private MybatisService coreService;
+
 	@Autowired
 	private Dao dao;
 
@@ -59,7 +62,7 @@ public class IndexController {
 		Map<String,Object> map = new HashMap<>();
 		map.put("start",start);
 		map.put("limit",limit);
-		List list = coreService.queryList("find_Userinfo_list",map);
+		List<Userinfo> list = coreService.queryList("find_Userinfo_list",Userinfo.class,map);
 		//System.out.println(list);
 		return list;
 	}

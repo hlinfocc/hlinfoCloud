@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="admin" />
         <module name="demo" />
-        <module name="docs" />
         <module name="gateway" />
         <module name="hlinfocommon" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="docs" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

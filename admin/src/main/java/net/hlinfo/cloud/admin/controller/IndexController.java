@@ -1,8 +1,10 @@
 package net.hlinfo.cloud.admin.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import net.hlinfo.cloud.admin.mybatis.service.CoreService;
+import net.hlinfo.cloud.entity.Userinfo;
+import net.hlinfo.cloud.mybatis.service.MybatisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +16,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class IndexController {
-	@Autowired
-	private CoreService coreService;
 
+	@Autowired
+	private MybatisService mybatisService;
+
+	@ApiOperationSupport(author = "service@hlinfo.net")
 	@ApiOperation("欢迎页")
 	@GetMapping(value = {"/","/index.html"})
 	public String index() {
@@ -24,10 +28,11 @@ public class IndexController {
 		return "Hello Word admin^_^";
 	}
 
+	@ApiOperationSupport(author = "service@hlinfo.net")
 	@ApiOperation("测试MyBatis")
 	@GetMapping("/ok")
 	public String getAreacode() {
-		List list = coreService.queryList("find_rootlog_list");
+		List<Userinfo> list = mybatisService.queryList("find_rootlog_list", Userinfo.class);
 		return "ok:"+list;
 	}
 

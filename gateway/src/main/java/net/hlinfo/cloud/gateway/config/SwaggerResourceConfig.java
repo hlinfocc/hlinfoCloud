@@ -7,6 +7,8 @@
 
 package net.hlinfo.cloud.gateway.config;
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +23,10 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-/***
- *
- * @since:swagger-bootstrap-ui 1.0
- * @author fsl
- * 2019/05/04 12:38
- */
 @Component
 @Primary
 public class SwaggerResourceConfig implements SwaggerResourcesProvider {
+    protected Logger log = LoggerFactory.getLogger(SwaggerResourceConfig.class);
     @Autowired
     private RouteLocator routeLocator;
     @Autowired
@@ -53,7 +50,7 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
     }
 
     private SwaggerResource swaggerResource(String name, String location) {
-        System.out.println("name:{"+name+"},location:{"+location+"}");
+        log.debug("name:{"+name+"},location:{"+location+"}");
         SwaggerResource swaggerResource = new SwaggerResource();
         swaggerResource.setName(name);
         swaggerResource.setLocation(location);

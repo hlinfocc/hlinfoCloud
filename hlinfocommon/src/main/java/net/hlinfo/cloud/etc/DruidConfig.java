@@ -1,6 +1,7 @@
 package net.hlinfo.cloud.etc;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import net.hlinfo.cloud.mybatis.service.MybatisService;
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;
 import org.nutz.dao.util.Daos;
@@ -29,4 +30,11 @@ public class DruidConfig {
         Daos.createTablesInPackage(dao, "net.hlinfo.cloud.entity", false);
         return dao;
     }
+
+    @Bean
+    public MybatisService mybatisService() {
+        MybatisService mybatisService = new MybatisService();
+        return mybatisService;
+    }
+
 }
